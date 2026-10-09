@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light dark" />
+  <link rel="icon" href="data:," />
+  <title>Missed-Call Recovery Lab — AI Text-Back Demo</title>
+  <meta name="description" content="Interactive demo: watch AI recover a missed call in seconds — instant text-back, qualification, CRM log, and human callback." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Missed-Call Recovery Lab — AI Text-Back Demo" />
+  <meta property="og:description" content="Interactive demo: watch AI recover a missed call in seconds — instant text-back, qualification, CRM log, and human callback." />
+  <meta property="og:url" content="https://missed-call-recovery-lab-mr-bilal-alis-projects.vercel.app/" />
+  <meta property="og:image" content="https://missed-call-recovery-lab-mr-bilal-alis-projects.vercel.app/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="627" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Missed-Call Recovery Lab — AI Text-Back Demo" />
+  <meta name="twitter:description" content="Interactive demo: watch AI recover a missed call in seconds — instant text-back, qualification, CRM log, and human callback." />
+  <meta name="twitter:image" content="https://missed-call-recovery-lab-mr-bilal-alis-projects.vercel.app/og-image.png" />
+  <meta name="description" content="Interactive missed-call recovery workflow and opportunity calculator for service businesses." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg:#edf3ea;--paper:#fbfdf9;--paper2:#e1ebe0;--ink:#152119;--muted:#56635a;--line:#c5d2c4;
+      --green:#1c6849;--green2:#124b34;--mint:#d8eddd;--orange:#e9773e;--orange2:#fae0d2;
+      --night:#101914;--night2:#17231c;--night3:#213127;--white:#f5faf6;--shadow:0 24px 70px rgba(38,63,45,.15);
+    }
+    @media(prefers-color-scheme:dark){:root{--bg:#0e1510;--paper:#151e18;--paper2:#1b2820;--ink:#eff6ef;--muted:#abb7ae;--line:#34433a;--green:#73c79a;--green2:#9bdcb7;--mint:#18392a;--orange:#f19a6a;--orange2:#43271b;--shadow:0 24px 70px rgba(0,0,0,.35)}}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:"DM Sans",sans-serif;line-height:1.55;overflow-x:hidden}button,input,a{font:inherit}button,a{-webkit-tap-highlight-color:transparent}.page{width:min(1180px,calc(100% - 40px));margin:auto}.mono{font-family:"IBM Plex Mono",monospace}
+    .hero{display:grid;grid-template-columns:minmax(0,.88fr) minmax(420px,.72fr);gap:clamp(38px,6vw,84px);align-items:center;min-height:740px;padding:54px 0 64px}.eyebrow{display:inline-flex;align-items:center;gap:9px;margin:0 0 22px;color:var(--green2);font-size:14px;font-weight:700}.eyebrow:before{content:"";width:9px;height:9px;border-radius:50%;background:var(--orange);box-shadow:0 0 0 5px var(--orange2)}h1{max-width:700px;margin:0 0 22px;font-size:clamp(43px,5.8vw,73px);line-height:.99;letter-spacing:-.055em}.lede{max-width:630px;margin:0;color:var(--muted);font-size:clamp(18px,2vw,21px)}.proofline{display:grid;grid-template-columns:repeat(3,1fr);margin:34px 0;border-block:1px solid var(--line)}.proofline div{padding:17px 15px 17px 0}.proofline div+div{padding-left:15px;border-left:1px solid var(--line)}.proofline strong,.proofline span{display:block}.proofline strong{font-size:15px}.proofline span{margin-top:4px;color:var(--muted);font-size:12px}.actions{display:flex;flex-wrap:wrap;gap:11px}.btn{min-height:50px;display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:0 20px;border:1px solid transparent;border-radius:999px;font-weight:700;text-decoration:none;cursor:pointer;transition:.2s ease}.btn:active{transform:translateY(1px)}.primary{background:var(--green2);color:white}.primary:hover{background:var(--green)}.secondary{background:transparent;color:var(--ink);border-color:var(--line)}.secondary:hover{background:var(--paper);border-color:var(--green)}.micro{margin-top:17px;color:var(--muted);font-size:12px}
+    .console{position:relative;max-width:500px;width:100%;justify-self:center;padding:16px;border-radius:34px;background:var(--night);color:var(--white);box-shadow:var(--shadow),0 0 0 8px color-mix(in srgb,var(--paper) 58%,transparent);overflow:hidden}.console:before{content:"";position:absolute;inset:auto -90px -100px auto;width:260px;height:260px;border-radius:50%;background:rgba(59,146,93,.16);filter:blur(20px)}.console-top{position:relative;display:flex;justify-content:space-between;align-items:center;padding:10px 8px 16px;border-bottom:1px solid #2e3d33;color:#a8b6ac;font-size:11px}.status{display:flex;align-items:center;gap:7px}.dot{width:7px;height:7px;border-radius:50%;background:#75d89e;box-shadow:0 0 0 4px rgba(117,216,158,.12)}.scenario-row{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:7px;padding:14px 0}.scenario{min-height:40px;padding:7px;border:1px solid #2f4135;border-radius:9px;background:transparent;color:#aab9ae;font-size:11px;font-weight:700;cursor:pointer}.scenario[aria-pressed="true"]{background:#244532;border-color:#3d7655;color:#e1f9e9}.scenario:disabled{opacity:.45;cursor:not-allowed}.call-card{position:relative;padding:18px;border-radius:17px;background:var(--night2);border:1px solid #2e3e33}.call-head{display:flex;align-items:center;gap:12px}.call-icon{display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:#284c38;color:#bdf1cf}.call-icon svg{width:21px}.call-head h2{margin:0;font-size:16px}.call-head p{margin:2px 0 0;color:#9ead9f;font-size:11px}.timer{margin-left:auto;color:#87d9a7;font-size:15px}.timeline{height:340px;margin:16px 0 14px;padding:0 2px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:#405347 transparent}.empty{display:grid;place-items:center;height:100%;padding:30px;text-align:center;color:#98a79c;font-size:13px}.event{display:grid;grid-template-columns:48px 16px 1fr;gap:8px;opacity:0;transform:translateY(5px);animation:arrive .25s ease forwards}.event+.event{margin-top:13px}.etime{padding-top:1px;color:#829086;font-size:9px}.track{position:relative}.track:before{content:"";position:absolute;left:7px;top:11px;bottom:-20px;width:1px;background:#34463a}.event:last-child .track:before{display:none}.pin{position:relative;z-index:1;width:15px;height:15px;border:3px solid var(--night2);border-radius:50%;background:#67c991;box-shadow:0 0 0 1px #67c991}.event.sms .pin{background:#e58a59;box-shadow:0 0 0 1px #e58a59}.event.crm .pin{background:#87a9f2;box-shadow:0 0 0 1px #87a9f2}.event h3{margin:0 0 3px;font-size:12px}.event p{margin:0;color:#a8b5ab;font-size:11px;line-height:1.45}.tag{display:inline-block;margin-top:6px;padding:4px 7px;border-radius:5px;background:#26392d;color:#aee4c1;font-size:9px}@keyframes arrive{to{opacity:1;transform:none}}.console-actions{position:relative;display:grid;grid-template-columns:1fr auto;gap:9px}.console-actions .btn{min-height:45px;border-radius:11px}.run{background:#d8f2e0;color:#153320}.run:hover{background:#bfe8cd}.reset{width:45px;padding:0;background:transparent;color:#9eada2;border-color:#314238}.reset:hover{border-color:#718176;color:white}.result{display:none;position:absolute;inset:auto 16px 16px;padding:17px;border-radius:14px;background:#f1f8f1;color:#152119;box-shadow:0 16px 38px rgba(0,0,0,.28);z-index:4}.result.show{display:block;animation:arrive .3s ease both}.result-top{display:flex;justify-content:space-between;gap:15px}.result strong{font-size:16px}.result p{margin:3px 0 0;color:#58645b;font-size:11px}.x{border:0;background:none;color:#59685e;font-size:20px;cursor:pointer}.fields{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:12px}.fields div{padding:8px;border-radius:8px;background:#ddeade}.fields span,.fields b{display:block}.fields span{color:#6c786f;font-size:8px;text-transform:uppercase;letter-spacing:.08em}.fields b{font-size:10px;margin-top:2px}
+    section{padding:90px 0}.section-head{display:grid;grid-template-columns:minmax(0,.84fr) minmax(280px,.4fr);gap:48px;align-items:end;margin-bottom:42px}.section-head h2{margin:0;font-size:clamp(34px,4.5vw,56px);line-height:1.04;letter-spacing:-.045em}.section-head p{margin:0;color:var(--muted)}.calculator{background:var(--paper)}.calc-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(360px,.52fr);gap:48px;align-items:stretch}.calc-form{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.field{padding:18px 0;border-top:1px solid var(--line)}.field label{display:block;min-height:44px;font-size:13px;font-weight:700}.input-wrap{display:flex;align-items:center;gap:6px}.input-wrap span{color:var(--muted)}.field input{width:100%;min-width:0;padding:12px 10px;border:1px solid var(--line);border-radius:9px;background:var(--bg);color:var(--ink);font-family:"IBM Plex Mono",monospace;font-size:17px}.field input:focus{outline:3px solid var(--orange2);border-color:var(--orange)}.calc-note{grid-column:1/-1;margin:3px 0 0;color:var(--muted);font-size:12px}.output{display:flex;flex-direction:column;justify-content:space-between;padding:27px;border-radius:20px;background:var(--green2);color:white}.output span{font-size:12px;opacity:.78}.big-number{margin:18px 0 8px;font-size:clamp(39px,5vw,64px);line-height:1;font-weight:700;letter-spacing:-.05em}.output p{margin:0;font-size:13px;opacity:.82}.output-foot{margin-top:28px;padding-top:16px;border-top:1px solid rgba(255,255,255,.23);font-size:11px;opacity:.76}.architecture{border-top:1px solid var(--line)}.arch-grid{display:grid;grid-template-columns:repeat(5,1fr)}.arch{min-height:235px;padding:26px 22px;border-left:1px solid var(--line)}.arch:first-child{padding-left:0;border-left:0}.arch:last-child{padding-right:0}.arch .num{color:var(--orange);font-size:12px}.arch h3{margin:38px 0 9px;font-size:18px}.arch p{margin:0;color:var(--muted);font-size:13px}.research{background:var(--paper)}.research-grid{display:grid;grid-template-columns:minmax(0,.68fr) minmax(310px,.32fr);gap:54px}.ranklist{border-top:1px solid var(--line)}.rank{display:grid;grid-template-columns:54px 1fr;gap:17px;padding:22px 0;border-bottom:1px solid var(--line)}.rank-num{color:var(--green);font-size:21px}.rank h3{margin:0 0 5px;font-size:17px}.rank p{margin:0;color:var(--muted);font-size:13px}.rank.selected{margin:0 -18px;padding:22px 18px;background:var(--mint);border:0;border-radius:13px}.rank.selected+.rank{margin-top:8px}.source-panel{align-self:start;position:sticky;top:20px;padding:25px;border-radius:17px;background:var(--paper2)}.source-panel h3{margin:0 0 6px}.source-panel>p{margin:0 0 18px;color:var(--muted);font-size:12px}.sources{display:grid}.sources a{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);font-size:12px;font-weight:700;text-decoration:none}.sources a:after{content:"↗";color:var(--green)}.sources a:hover{color:var(--green2)}.caveat{margin-top:17px!important;font-size:10px!important}.cta{padding:70px 0}.cta-inner{display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center;padding:43px 0;border-block:1px solid var(--line)}.cta h2{max-width:730px;margin:0;font-size:clamp(31px,4vw,49px);line-height:1.08;letter-spacing:-.045em}.cta p{max-width:650px;margin:11px 0 0;color:var(--muted)}footer{display:flex;justify-content:space-between;gap:20px;padding:0 0 46px;color:var(--muted);font-size:11px}button:focus-visible,a:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+    @media(max-width:950px){.hero{grid-template-columns:1fr}.console{max-width:560px}.section-head,.calc-grid,.research-grid{grid-template-columns:1fr}.arch-grid{grid-template-columns:repeat(2,1fr)}.arch{border-top:1px solid var(--line)}.arch:nth-child(odd){border-left:0;padding-left:0}.source-panel{position:static}}
+    @media(max-width:620px){.page{width:min(100% - 24px,1180px)}.hero{min-height:auto;padding:30px 0 54px;gap:42px}h1{font-size:clamp(40px,13vw,56px)}.proofline{grid-template-columns:1fr}.proofline div,.proofline div+div{padding:13px 0;border-left:0}.proofline div+div{border-top:1px solid var(--line)}.actions .btn{width:100%}.console{padding:13px;border-radius:25px}.timeline{height:323px}.fields{grid-template-columns:1fr}.scenario{font-size:10px}section{padding:64px 0}.section-head{gap:16px;margin-bottom:30px}.calc-form{grid-template-columns:1fr}.field label{min-height:0;margin-bottom:8px}.arch-grid{grid-template-columns:1fr}.arch,.arch:nth-child(odd),.arch:first-child,.arch:last-child{min-height:0;padding:23px 0;border-left:0;border-top:1px solid var(--line)}.arch:first-child{border-top:0}.arch h3{margin-top:18px}.rank.selected{margin:0 -8px;padding:20px 8px}.cta-inner{grid-template-columns:1fr}.cta .btn{width:100%}footer{flex-direction:column}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+  </style>
+</head>
+<body>
+<main>
+  <div class="page hero">
+    <div>
+      <p class="eyebrow">Missed-call recovery lab</p>
+      <h1>Turn one missed call into a ready-to-work lead.</h1>
+      <p class="lede">Run the workflow from unanswered ring to instant text, qualification, CRM record, and human callback—then calculate the gross opportunity represented by your own missed calls.</p>
+      <div class="proofline"><div><strong>Timestamped journey</strong><span>every handoff is visible</span></div><div><strong>Human-confirmed next step</strong><span>no pushy auto-booking</span></div><div><strong>CRM-ready context</strong><span>the caller does not repeat everything</span></div></div>
+      <div class="actions"><button class="btn primary" id="heroRun" type="button">Run the recovery flow <span aria-hidden="true">↓</span></button><a class="btn secondary" href="#calculator">Calculate missed opportunity</a></div>
+      <p class="micro">Scripted, in-browser workflow simulation. It does not place calls, send SMS, or store contact data.</p>
+    </div>
+
+    <div class="console" id="lab">
+      <div class="console-top"><span class="mono">WORKFLOW / LIVE TRACE</span><span class="status"><i class="dot"></i> Ready</span></div>
+      <div class="scenario-row" aria-label="Choose a caller scenario">
+        <button class="scenario" data-scenario="afterhours" aria-pressed="true" type="button">After-hours</button>
+        <button class="scenario" data-scenario="estimate" aria-pressed="false" type="button">Estimate</button>
+        <button class="scenario" data-scenario="reschedule" aria-pressed="false" type="button">Reschedule</button>
+      </div>
+      <div class="call-card">
+        <div class="call-head">
+          <div class="call-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M7 4h3l1.2 4-2 1.4a15 15 0 0 0 5.4 5.4l1.4-2 4 1.2v3c0 1.1-.9 2-2 2C10.8 19 5 13.2 5 6c0-1.1.9-2 2-2Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div><h2 id="traceTitle">After-hours service call</h2><p>Missed call → recovery workflow</p></div>
+          <span class="timer mono" id="timer">00:00</span>
+        </div>
+        <div class="timeline" id="timeline" aria-live="polite"><div class="empty">Choose a scenario and run the flow to see each system event.</div></div>
+        <div class="console-actions"><button class="btn run" id="runBtn" type="button">Run missed-call recovery</button><button class="btn reset" id="resetBtn" type="button" aria-label="Reset workflow">↺</button></div>
+      </div>
+      <div class="result" id="result" role="status"><div class="result-top"><div><strong>Human callback queued</strong><p>The CRM record contains the context collected by SMS.</p></div><button class="x" id="closeResult" aria-label="Close result" type="button">×</button></div><div class="fields" id="fields"></div></div>
+    </div>
+  </div>
+
+  <section class="calculator" id="calculator">
+    <div class="page">
+      <div class="section-head"><h2>What do missed calls represent for your business?</h2><p>Use your own assumptions. The result is gross opportunity at risk—not predicted recovery, revenue, or ROI.</p></div>
+      <div class="calc-grid">
+        <div class="calc-form">
+          <div class="field"><label for="weekly">Inbound calls per week</label><div class="input-wrap"><input id="weekly" type="number" min="0" step="1" inputmode="numeric" placeholder="e.g. 100" /></div></div>
+          <div class="field"><label for="missed">Calls missed</label><div class="input-wrap"><input id="missed" type="number" min="0" max="100" step="1" inputmode="decimal" placeholder="e.g. 25" /><span>%</span></div></div>
+          <div class="field"><label for="ticket">Average completed-job value</label><div class="input-wrap"><span>$</span><input id="ticket" type="number" min="0" step="1" inputmode="decimal" placeholder="e.g. 500" /></div></div>
+          <p class="calc-note">Formula: weekly calls × missed-call percentage × 4.33 weeks × average job value. It assumes each missed call represents one potential job solely to size the top-of-funnel opportunity; actual qualification, close rate, capacity, and revenue will differ.</p>
+        </div>
+        <div class="output" aria-live="polite"><div><span>MONTHLY GROSS OPPORTUNITY REPRESENTED</span><div class="big-number" id="opportunity">—</div><p id="outputText">Enter all three assumptions to calculate.</p></div><div class="output-foot">No values leave this page. Inputs reset when the page closes.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="architecture">
+    <div class="page">
+      <div class="section-head"><h2>Five moments. One clean recovery path.</h2><p>The demo exposes the operational handoffs—not just a polished chat transcript.</p></div>
+      <div class="arch-grid">
+        <article class="arch"><span class="num mono">01 / DETECT</span><h3>Call goes unanswered</h3><p>A missed-call event starts the workflow with the source number and timestamp.</p></article>
+        <article class="arch"><span class="num mono">02 / RESPOND</span><h3>Permission-first SMS</h3><p>The message identifies the business context and asks whether the caller wants help by text.</p></article>
+        <article class="arch"><span class="num mono">03 / QUALIFY</span><h3>One question at a time</h3><p>Intent, urgency, location, and preferred follow-up are collected without forcing a booking.</p></article>
+        <article class="arch"><span class="num mono">04 / WRITE</span><h3>Structured CRM record</h3><p>The conversation becomes usable fields plus a concise handoff note.</p></article>
+        <article class="arch"><span class="num mono">05 / HAND OFF</span><h3>Human owns the promise</h3><p>The team receives the brief and confirms the appointment or next step.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="research" id="research">
+    <div class="page">
+      <div class="section-head"><h2>Why this project earned a portfolio slot.</h2><p>Competitor research completed October 9, 2026 ranked five demo formats for a solo AI automation expert serving US small businesses and agencies.</p></div>
+      <div class="research-grid">
+        <div class="ranklist">
+          <article class="rank"><span class="rank-num mono">01</span><div><h3>Personalized call-in demo</h3><p>Highest-ranked direct-outreach format: the prospect calls an agent tailored to their own business.</p></div></article>
+          <article class="rank"><span class="rank-num mono">02</span><div><h3>Embedded web voice widget</h3><p>An always-on self-service experience for profile and website visitors.</p></div></article>
+          <article class="rank"><span class="rank-num mono">03</span><div><h3>30–60 second real-call video</h3><p>Feed-native proof that pairs naturally with a live demo link.</p></div></article>
+          <article class="rank selected"><span class="rank-num mono">04</span><div><h3>Missed-call text-back + CRM trace — built here</h3><p>Shows the mechanism behind fast lead response with visible timestamps, qualification, and human handoff.</p></div></article>
+          <article class="rank selected"><span class="rank-num mono">05</span><div><h3>Missed-call opportunity calculator — built here</h3><p>Lets each visitor size the problem using their own assumptions before a consultation.</p></div></article>
+        </div>
+        <aside class="source-panel"><h3>Research trail</h3><p>Selected public examples and practitioner material that informed the workflow.</p><nav class="sources" aria-label="Research sources">
+          <a href="https://createassistants.ai" target="_blank" rel="noopener">Create Assistants</a>
+          <a href="https://www.youtube.com/watch?v=lDp8XYRcSV4" target="_blank" rel="noopener">Missed-call callback demo</a>
+          <a href="https://github.com/luke-mcneur/home-care-roi-calculator" target="_blank" rel="noopener">Neurvana ROI calculator</a>
+          <a href="https://www.storylane.io/blog/interactive-demo-ai-agent-combo" target="_blank" rel="noopener">Interactive demo framework</a>
+          <a href="https://medium.com/the-times-of-chronicle/the-24-hour-voice-agent-how-i-built-a-5-200-month-ai-receptionist-agency-with-zero-coding-179cebe4e54b" target="_blank" rel="noopener">Demo-first playbook</a>
+        </nav><p class="caveat">Some broader research claims came from vendor pages, index excerpts, or marketing playbooks and were not independently audited. This project uses the repeated structural patterns, not those revenue claims.</p></aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta"><div class="page cta-inner"><div><h2>Build the production version around your real call flow.</h2><p>A live deployment would connect telephony, SMS, consent rules, CRM fields, routing, and tested escalation paths to the business’s actual operating process.</p></div><a class="btn primary" href="https://cal.com/mrbilalali/discovery-call" target="_blank" rel="noopener">Book a 30-minute discovery call <span aria-hidden="true">↗</span></a></div></section>
+</main>
+<footer class="page"><span>Interactive workflow concept · October 2026</span><span>Scripted simulation · no messages sent · no data stored</span></footer>
+<script>
+(function(){
+  var flows={
+    afterhours:{title:"After-hours service call",events:[
+      ["00:00","Call missed","No team member answers after business hours.","call"],
+      ["00:12","Recovery SMS sent","“Sorry we missed your call. Would you like help by text?”","sms"],
+      ["00:26","Caller replies","AC is running but blowing warm air.","sms"],
+      ["00:41","AI qualifies","ZIP 30318 · toddler in home · text follow-up preferred.","sms"],
+      ["00:56","CRM record created","Urgent no-cool request with transcript summary.","crm"],
+      ["01:03","Human callback queued","Team receives context and owns confirmation.","crm"]
+    ],fields:["Intent","No-cool service","Priority","Urgent","Follow-up","Text first"]},
+    estimate:{title:"New estimate request",events:[
+      ["00:00","Call missed","Estimator is on another customer call.","call"],
+      ["00:09","Recovery SMS sent","“We saw your call. Are you looking for service or an estimate?”","sms"],
+      ["00:22","Caller replies","Estimate for replacing a 12-year-old system.","sms"],
+      ["00:39","AI qualifies","Single-family home · ZIP 85016 · weekday mornings.","sms"],
+      ["00:52","CRM opportunity created","Replacement estimate tagged as new opportunity.","crm"],
+      ["01:01","Estimator follow-up queued","Human reviews scope before offering times.","crm"]
+    ],fields:["Intent","Replacement","Property","Single-family","Window","Weekday AM"]},
+    reschedule:{title:"Appointment reschedule",events:[
+      ["00:00","Call missed","Dispatch line is handling another call.","call"],
+      ["00:08","Recovery SMS sent","“We missed you. Is this about an existing appointment?”","sms"],
+      ["00:19","Caller replies","Needs to move tomorrow’s visit to next week.","sms"],
+      ["00:34","AI collects preference","Tuesday or Wednesday after 2 PM preferred.","sms"],
+      ["00:47","CRM task created","Reschedule request linked to the existing customer.","crm"],
+      ["00:55","Dispatcher review queued","Human confirms availability before changing the booking.","crm"]
+    ],fields:["Intent","Reschedule","Preference","Tue/Wed PM","Action","Confirm first"]}
+  };
+  var active="afterhours",running=false,timeouts=[],tick,elapsed=0;
+  var timeline=document.getElementById("timeline"),timer=document.getElementById("timer"),runBtn=document.getElementById("runBtn"),result=document.getElementById("result"),fields=document.getElementById("fields"),traceTitle=document.getElementById("traceTitle");
+  var buttons=Array.prototype.slice.call(document.querySelectorAll(".scenario"));
+  function reset(){timeouts.forEach(clearTimeout);timeouts=[];clearInterval(tick);running=false;elapsed=0;timer.textContent="00:00";runBtn.disabled=false;runBtn.textContent="Run missed-call recovery";buttons.forEach(function(b){b.disabled=false});result.classList.remove("show");timeline.innerHTML='<div class="empty">Choose a scenario and run the flow to see each system event.</div>';}
+  function setScenario(name){if(running)return;active=name;buttons.forEach(function(b){b.setAttribute("aria-pressed",String(b.getAttribute("data-scenario")===name))});traceTitle.textContent=flows[name].title;reset();}
+  function addEvent(item){var node=document.createElement("div");node.className="event "+item[3];node.innerHTML='<span class="etime mono">'+item[0]+'</span><span class="track"><i class="pin"></i></span><div><h3>'+item[1]+'</h3><p>'+item[2]+'</p><span class="tag">'+(item[3]==="crm"?"CRM":"AUTOMATION")+'</span></div>';timeline.appendChild(node);timeline.scrollTop=timeline.scrollHeight;}
+  function finish(){running=false;clearInterval(tick);runBtn.disabled=false;runBtn.textContent="Run again";buttons.forEach(function(b){b.disabled=false});fields.innerHTML="";for(var i=0;i<flows[active].fields.length;i+=2){var d=document.createElement("div");d.innerHTML="<span>"+flows[active].fields[i]+"</span><b>"+flows[active].fields[i+1]+"</b>";fields.appendChild(d)}result.classList.add("show");}
+  function run(){reset();running=true;timeline.innerHTML="";runBtn.disabled=true;runBtn.textContent="Workflow running…";buttons.forEach(function(b){b.disabled=true});tick=setInterval(function(){elapsed++;var m=Math.floor(elapsed/60),s=elapsed%60;timer.textContent=String(m).padStart(2,"0")+":"+String(s).padStart(2,"0")},210);flows[active].events.forEach(function(item,index){var id=setTimeout(function(){addEvent(item);if(index===flows[active].events.length-1){timeouts.push(setTimeout(finish,650))}},350+index*1050);timeouts.push(id)});}
+  buttons.forEach(function(b){b.addEventListener("click",function(){setScenario(b.getAttribute("data-scenario"))})});runBtn.addEventListener("click",run);document.getElementById("resetBtn").addEventListener("click",reset);document.getElementById("closeResult").addEventListener("click",function(){result.classList.remove("show")});document.getElementById("heroRun").addEventListener("click",function(){document.getElementById("lab").scrollIntoView({behavior:"smooth",block:"center"});setTimeout(function(){if(!running)run()},450)});
+  var weekly=document.getElementById("weekly"),missed=document.getElementById("missed"),ticket=document.getElementById("ticket"),opportunity=document.getElementById("opportunity"),outputText=document.getElementById("outputText");
+  function calc(){var a=parseFloat(weekly.value),b=parseFloat(missed.value),c=parseFloat(ticket.value);if(!isFinite(a)||!isFinite(b)||!isFinite(c)||a<0||b<0||b>100||c<0){opportunity.textContent="—";outputText.textContent=b>100?"Missed calls cannot exceed 100%.":"Enter all three assumptions to calculate.";return}var v=a*(b/100)*4.33*c;opportunity.textContent=v.toLocaleString("en-US",{style:"currency",currency:"USD",maximumFractionDigits:0});outputText.textContent=Math.round(a*(b/100)*4.33).toLocaleString("en-US")+" missed calls represented per month.";}
+  [weekly,missed,ticket].forEach(function(input){input.addEventListener("input",calc)});
+}());
+</script>
+</body>
+</html>
